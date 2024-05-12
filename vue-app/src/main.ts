@@ -1,14 +1,21 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
+
+import components from '@/components/UI'
+
+import directives from './directives'
+
+import router from './router/router'
 
 const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
+components.forEach((component) => {
+  app.component(component.name, component)
+})
 
-app.mount('#app')
+directives.forEach((directive) => {
+  app.directive(directive.name, directive)
+})
+
+app.use(router).mount('#app')

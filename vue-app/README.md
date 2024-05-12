@@ -1,39 +1,55 @@
-# vue-app
+# Суть проекта
 
-This template should help get you started developing with Vue 3 in Vite.
+Приложение реализовано на связке Vue + TypeScript с настроенным роутингом.
 
-## Recommended IDE Setup
+- Стандартно разворачивается на **localhost:5173**;
+- Выполняет HTTP-запросы к [**моковому API**](https://jsonplaceholder.typicode.com) по эндпоинту **_/users_**;
+- Отображает результаты запросов с помощью **Vue-компонентов**;
+- **Стилизация** Vue-компонентов с помощью **CSS** минимальна, только для их различимого отображения;
+- В качестве loader'а используется компонент [**MyLoader.vue**](/vue-app/src/components/UI/MyLoader.vue); компонент отображается в процессе ожидания подгрузки данных в компоненты и их рендеринга; реализован с помощью **CSS-анимации** через **keyframes**
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+#
 
-## Type Support for `.vue` Imports in TS
+# Установка зависимостей
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+В директории проекта запустить:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+#
 
-```sh
+# Запуск приложения
+
+В директории проекта запустить:
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Запускает проект в режиме разработки.
 
-```sh
-npm run build
-```
+#
 
-### Lint with [ESLint](https://eslint.org/)
+# Роутинг приложения
 
-```sh
-npm run lint
-```
+Исходный код для роутинга приложения расположен в [**_router_**](/vue-app/src/router/router.ts).
+
+Далее приведены доступные эндпоинты для перехода:
+
+- http://localhost:5173/ - домашняя страница, без явной логики
+
+- http://localhost:5173/users/ - страница со списком users, получаемых из API
+
+- http://localhost:5173/users/**number** - страница с отдельным элементом списка users, возвращает элемент из API по его **id**
+
+#
+
+# Работа с API
+
+HTTP-запросы к моковому API осуществляются внутри компонентов из директории [**pages**](/react-app/src/pages/) с помощью библиотеки [**_axios_**](https://github.com/axios/axios).
+
+Запрос к моковому API происходит с помощью асинхронных методов Vue-компонентов
+
+#
