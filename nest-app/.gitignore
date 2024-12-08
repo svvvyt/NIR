@@ -1,0 +1,28 @@
+# Node.js dependencies
+/node_modules/
+
+# Build output
+/dist/
+/build/
+
+# TypeScript config files
+/tsconfig.tsbuildinfo
+
+# NestJS specific
+/.nestjs/
+
+# dotenv environment variable files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# coverage directory from testing
+/coverage/
+
+# npm package lock
+package-lock.json
