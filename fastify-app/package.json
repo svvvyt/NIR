@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "fastify": "^5.1.0",
+    "fastify-formbody": "^5.2.0",
+    "fastify-mongoose": "^0.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
